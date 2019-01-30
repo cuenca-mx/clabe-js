@@ -1,0 +1,19 @@
+{
+  "name": "clabe-js",
+  "version": "1.0.0",
+  "description": "'Validate and generate the control digit of a CLABE in Mexico'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuenca-mx/clabe.js.git"
+  },
+  "author": "Cuenca/dev@cuenca.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cuenca-mx/clabe.js/issues"
+  },
+  "homepage": "https://github.com/cuenca-mx/clabe.js#readme"
+}
