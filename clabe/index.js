@@ -21,7 +21,7 @@ computeControlDigit=(clabe)=>{
 validateClabe=(clabe)=>{
   /*Validate CLABE according to
     https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control*/
-  return(typeof( Number(clabe))==="number" &&
+  return(isANumber(clabe) &&
   clabe.length === CLABE_LENGTH &&
   BANKS.hasOwnProperty(clabe.substring(0, 3)) &&
   clabe.substring(CLABE_LENGTH - 1) == computeControlDigit(clabe))
@@ -34,4 +34,8 @@ getBankName=(clabe)=>{
   let bankName = BANK_NAMES[BANKS[code]];
 
   return bankName === undefined?'Ningún banco tiene código '+ code:bankName;
+}
+// will return true only if characters in a string are digits
+function isANumber(str){
+ return !/\D/.test(str);
 }
