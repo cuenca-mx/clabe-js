@@ -1,4 +1,5 @@
-import (BANKS, BANK_NAMES) from ./banks.js
+const BANKS = require('./banks.js').BANKS;
+const BANK_NAMES = require('./banks.js').BANK_NAMES;
 
 const CLABE_LENGTH = 18;
 const CLABE_WEIGHTS = [3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7];

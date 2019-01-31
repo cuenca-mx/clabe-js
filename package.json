@@ -4,7 +4,7 @@
   "description": "'Validate and generate the control digit of a CLABE in Mexico'",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/test.js -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/cuenca-mx/clabe.js/issues"
   },
-  "homepage": "https://github.com/cuenca-mx/clabe.js#readme"
+  "homepage": "https://github.com/cuenca-mx/clabe.js#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
 }

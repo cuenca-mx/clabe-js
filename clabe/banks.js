@@ -188,3 +188,5 @@ const BANK_NAMES = {
     '40113': 'Ve Por Mas',
     '40141': 'Volkswagen'
 };
+module.exports.BANKS = BANKS;
+module.exports.BANK_NAMES = BANK_NAMES;
