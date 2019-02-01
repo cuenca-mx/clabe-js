@@ -3,6 +3,7 @@ notifications:
 
 language: node_js
 node_js:
+  -"node"
   - "7"
 install:
   - npm install
@@ -10,3 +11,4 @@ cache: npm
 script:
   - mocha test/test.js
   - npm run coverage
+  - coverrals
