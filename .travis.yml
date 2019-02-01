@@ -1,0 +1,12 @@
+notifications:
+  slack: cuencafinance:Vb7c4Zn7YCpT0wGjOFDwYQUM
+
+language: node_js
+node_js:
+  - "iojs"
+  - "7"
+install:
+  - npm install
+cache: npm
+script:
+  - mocha test/test.js
