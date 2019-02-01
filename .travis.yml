@@ -3,8 +3,7 @@ notifications:
 
 language: node_js
 node_js:
-  - "iojs"
-  - "7"
+  - "4"
 install:
   - npm install
 cache: npm
