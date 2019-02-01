@@ -33,6 +33,6 @@ describe('getBankName', function(){
     expect(getBankName(VALID_CLABE)).to.equal('Banamex');
   });
   it('should give an error for invalid clabe', function(){
-    expect(getBankName(INVALID_CLABE_BANK_CODE)).to.throw(Error);
+    expect(()=> new getBankName(INVALID_CLABE_BANK_CODE)).to.throw(Error);
   });
 });

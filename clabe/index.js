@@ -31,7 +31,7 @@ validateClabe=(clabe)=>{
 getBankName=(clabe)=>{
   /*Regresa el nombre del banco basado en los primeros 3 digitos
     https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control*/
-  let code = clabe.substring(0,3);
+  let code = clabe.substring(0, 3);
   let bankName = BANK_NAMES[BANKS[code]];
 
   return bankName === undefined?'Ningún banco tiene este código '+ code:bankName;
