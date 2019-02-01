@@ -6,7 +6,9 @@ node_js:
   - "7"
 install:
   - npm install
+  
 cache: npm
+
 script:
   - mocha test/test.js
   - npm run coverage
