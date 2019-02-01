@@ -34,7 +34,7 @@ getBankName=(clabe)=>{
   let code = clabe.substring(0,3);
   let bankName = BANK_NAMES[BANKS[code]];
 
-  return bankName === undefined?'Ningún banco tiene código '+ code:bankName;
+  return bankName === undefined?'Ningún banco tiene este código '+ code:bankName;
 }
 // will return true only if characters in a string are digits
 function isANumber(str){
