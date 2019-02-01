@@ -9,4 +9,6 @@ install:
 cache: npm
 script:
   - mocha test/test.js
-after_success: npm run coverage
+after_success:
+  - npm run coverage
+  - npm run report-coverage
