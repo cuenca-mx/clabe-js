@@ -2,7 +2,11 @@
 
 language: node_js
 node_js:
+<<<<<<< HEAD
   - "10"
+=======
+  - "stable"
+>>>>>>> testing coveralls scriptq
 install:
   - npm install
 

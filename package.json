@@ -4,8 +4,13 @@
   "description": "'Validate and generate the control digit of a CLABE in Mexico'",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "nyc mocha",
     "coverage": "nyc --all npm test && nyc report --reporter=text-lcov --reporter=text-summary"
+=======
+    "test": "mocha",
+    
+>>>>>>> testing coveralls scriptq
   },
   "repository": {
     "type": "git",
