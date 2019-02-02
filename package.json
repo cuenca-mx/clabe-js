@@ -4,13 +4,9 @@
   "description": "'Validate and generate the control digit of a CLABE in Mexico'",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "test": "nyc mocha",
-    "coverage": "nyc --all npm test && nyc report --reporter=text-lcov --reporter=text-summary"
-=======
     "test": "mocha",
-    
->>>>>>> testing coveralls scriptq
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -24,14 +20,12 @@
   "homepage": "https://github.com/cuenca-mx/clabe.js#readme",
   "devDependencies": {
     "coveralls": "^3.0.2",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^13.1.0"
   },
   "dependencies": {
     "chai": "^4.2.0"
-  },
-  "nyc": {
-    "sourceMap": false,
-    "instrument": false
   }
 }

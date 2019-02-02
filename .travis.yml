@@ -1,12 +1,9 @@
-
+notifications:
+  slack: cuencafinance:Vb7c4Zn7YCpT0wGjOFDwYQUM
 
 language: node_js
 node_js:
-<<<<<<< HEAD
-  - "10"
-=======
   - "stable"
->>>>>>> testing coveralls scriptq
 install:
   - npm install
 
@@ -16,4 +13,4 @@ script:
   - mocha test/test.js
 after_success:
   - npm run coverage
-  - coveralls
+  - npm run coveralls
