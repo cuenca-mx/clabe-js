@@ -5,8 +5,10 @@ const CLABE_LENGTH = 18;
 const CLABE_WEIGHTS = [3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7];
 
 computeControlDigit=(clabe)=>{
-  /*Compute CLABE control digit according to
-    https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control*/
+  /*
+  Compute CLABE control digit according to
+    https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control
+  */
   let clabeList = String(clabe).split("");
   let clabeInt = clabeList.map((i) => Number(i))
   let weighted = [];
@@ -20,8 +22,10 @@ computeControlDigit=(clabe)=>{
 }
 
 validateClabe=(clabe)=>{
-  /*Validate CLABE according to
-    https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control*/
+  /*
+  Validate CLABE according to
+    https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control
+  */
   return(isANumber(clabe) &&
   clabe.length === CLABE_LENGTH &&
   BANKS.hasOwnProperty(clabe.substring(0, 3)) &&
@@ -29,8 +33,10 @@ validateClabe=(clabe)=>{
 }
 
 getBankName=(clabe)=>{
-  /*Regresa el nombre del banco basado en los primeros 3 digitos
-    https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control*/
+  /*
+  Regresa el nombre del banco basado en los primeros 3 digitos
+    https://es.wikipedia.org/wiki/CLABE#D.C3.ADgito_control
+  */
   let code = clabe.substring(0, 3);
   let bankName = BANK_NAMES[BANKS[code]];
 
