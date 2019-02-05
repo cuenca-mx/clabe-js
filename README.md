@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/cuenca-mx/clabe-js.svg?branch=master)](https://travis-ci.com/cuenca-mx/clabe-js)
 [![Coverage Status](https://coveralls.io/repos/github/cuenca-mx/clabe-js/badge.svg?branch=validate)](https://coveralls.io/github/cuenca-mx/clabe-js?branch=validate)
+
 # clabe.js
 
 Librería para validar y calcular un número CLABE basado en https://es.wikipedia.org/wiki/CLABE
