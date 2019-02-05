@@ -37,5 +37,6 @@ clabe.validateClabe('002000000000000008')
 Para obtener el banco a partir de 3 dígitos
 
 ```JavaScript
-import clabe'002000000000000008')
+import clabe
+clabe.getBankName('002000000000000008')
 ```
