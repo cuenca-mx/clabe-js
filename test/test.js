@@ -1,6 +1,10 @@
-var index = require('../clabe/index.js')
+/* eslint-disable */
+var validateClabe = require('../clabe/index.js').validateClabe;
+var getBankName = require('../clabe/index.js').getBankName;
+var computeControlDigit = require('../clabe/index.js').computeControlDigit;
 var assert = require('chai').assert;
 var expect = require('chai').expect;
+
 
 let VALID_CLABE = '002000000000000008';
 let INVALID_CLABE_CONTROL_DIGIT = '002000000000000007';
