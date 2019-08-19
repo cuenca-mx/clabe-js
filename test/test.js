@@ -1,9 +1,9 @@
 /* eslint-disable */
-var validateClabe = require('../lib/index.js').validateClabe;
-var getBankName = require('../lib/index.js').getBankName;
-var computeControlDigit = require('../lib/index.js').computeControlDigit;
-var assert = require('chai').assert;
-var expect = require('chai').expect;
+const validateClabe = require('../lib/index.js').validateClabe;
+const getBankName = require('../lib/index.js').getBankName;
+const computeControlDigit = require('../lib/index.js').computeControlDigit;
+const assert = require('chai').assert;
+const expect = require('chai').expect;
 
 
 const VALID_CLABE = '002000000000000008';
