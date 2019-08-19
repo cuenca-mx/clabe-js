@@ -21,10 +21,6 @@
       "no-extra-parens": "error",
       "max-len": ["error", { "code": 100 }],
       "no-multi-spaces": "error",
-      "space-in-parens": ["error", "always"],
-      "array-bracket-spacing": ["error", "always"],
-      "object-curly-spacing": ["error", "always"],
-      "computed-property-spacing": ["error", "always"],
       "space-infix-ops": ["error"]
     }
 }
