@@ -1,7 +1,7 @@
 /* eslint-disable */
-var validateClabe = require('../clabe/index.js').validateClabe;
-var getBankName = require('../clabe/index.js').getBankName;
-var computeControlDigit = require('../clabe/index.js').computeControlDigit;
+var validateClabe = require('../lib/index.js').validateClabe;
+var getBankName = require('../lib/index.js').getBankName;
+var computeControlDigit = require('../lib/index.js').computeControlDigit;
 var assert = require('chai').assert;
 var expect = require('chai').expect;
 
