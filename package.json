@@ -2,7 +2,7 @@
   "name": "clabe-js",
   "version": "1.0.1",
   "description": "'Validate and generate the control digit of a CLABE in Mexico'",
-  "main": "clabe/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
