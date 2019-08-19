@@ -1,0 +1,6 @@
+.travis.yml
+package-lock.json
+yarn.lock
+test/
+.git
+coverage

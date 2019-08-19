@@ -1,6 +1,6 @@
 {
   "name": "clabe-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "'Validate and generate the control digit of a CLABE in Mexico'",
   "main": "clabe/index.js",
   "scripts": {
