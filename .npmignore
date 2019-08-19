@@ -4,3 +4,4 @@ yarn.lock
 test/
 .git
 coverage
+.npmignore
