@@ -49,5 +49,5 @@ function isANumber(str){
 
 module.exports.BANKS = BANKS;
 module.exports.BANK_NAMES = BANK_NAMES;
-module.exports.validateClabe = VALIDATE_CLABE;
-module.exports.getBankName = GET_BANK_NAME;
+module.exports.validateClabe = validateClabe;
+module.exports.getBankName = getBankName;
