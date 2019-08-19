@@ -1,9 +1,11 @@
 {
   "name": "clabe-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "'Validate and generate the control digit of a CLABE in Mexico'",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "test": "mocha",
     "coverage": "istanbul cover _mocha",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
@@ -20,6 +22,8 @@
   "homepage": "https://github.com/cuenca-mx/clabe.js#readme",
   "devDependencies": {
     "coveralls": "^3.0.2",
+    "eslint": "^6.2.0",
+    "eslint-config-strongloop": "^2.1.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
