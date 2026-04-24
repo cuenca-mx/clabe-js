@@ -1,4 +1,4 @@
-name: cuenca-mx/clabe-js to NPM
+name: cuenca-mx/clabe-js release to NPM
 
 on:
   release:
