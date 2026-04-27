@@ -126,6 +126,33 @@ describe('addBank / removeBank', function () {
     expect(getBankName('999000000000000000')).to.equal(null);
   });
 
+  it('removeBank elimina por código ABM de 3 dígitos', function () {
+    addBank(TEST_CODE, TEST_NAME);
+    removeBank('999');
+    expect(BANKS['999']).to.equal(undefined);
+    expect(BANK_NAMES[TEST_CODE]).to.equal(undefined);
+  });
+
+  it('removeBank no borra por sufijo si el código Banxico no está registrado', function () {
+    addBank(TEST_CODE, TEST_NAME);
+    removeBank('99999');
+    expect(BANKS['999']).to.equal(TEST_CODE);
+    expect(BANK_NAMES[TEST_CODE]).to.equal(TEST_NAME);
+  });
+
+  it('removeBank no borra el ABM si no coincide con el código Banxico de 5 dígitos', function () {
+    addBank(TEST_CODE, TEST_NAME);
+    try {
+      BANKS['999'] = '50000';
+      removeBank(TEST_CODE);
+      expect(BANKS['999']).to.equal('50000');
+      expect(BANK_NAMES[TEST_CODE]).to.equal(TEST_NAME);
+    } finally {
+      BANKS['999'] = TEST_CODE;
+      removeBank(TEST_CODE);
+    }
+  });
+
   it('removeBank es idempotente cuando el banco no existe', function () {
     expect(() => removeBank('99999')).to.not.throw();
     expect(() => removeBank('')).to.not.throw();
@@ -163,7 +190,14 @@ describe('generateNewClabes', function () {
   });
 
   it('rechaza prefix demasiado largo', function () {
-    expect(() => generateNewClabes(1, '12345678901234567')).to.throw(RangeError);
+    expect(() => generateNewClabes(1, '123456789012345678')).to.throw(RangeError);
+  });
+
+  it('acepta prefix de 17 dígitos (un solo hueco para dígito de control)', function () {
+    const prefix = '00200000000000000';
+    const clabes = generateNewClabes(1, prefix);
+    expect(clabes).to.have.lengthOf(1);
+    expect(validateClabe(clabes[0])).to.be.true;
   });
 
   it('rechaza pedir más CLABEs de las posibles', function () {
