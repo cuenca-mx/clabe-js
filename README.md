@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/cuenca-mx/clabe-js.svg?branch=master)](https://travis-ci.com/cuenca-mx/clabe-js)
-[![Coverage Status](https://coveralls.io/repos/github/cuenca-mx/clabe-js/badge.svg?branch=validate)](https://coveralls.io/github/cuenca-mx/clabe-js?branch=validate)
+[![test](https://github.com/cuenca-mx/clabe-js/actions/workflows/test.yml/badge.svg)](https://github.com/cuenca-mx/clabe-js/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/cuenca-mx/clabe-js/branch/master/graph/badge.svg)](https://codecov.io/gh/cuenca-mx/clabe-js)
 
 # clabe-js
 

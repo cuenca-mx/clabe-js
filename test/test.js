@@ -1,4 +1,3 @@
-/* eslint-disable */
 const clabe = require('../lib/index.js');
 const {
   BANKS,
@@ -16,7 +15,7 @@ const { expect } = require('chai');
 
 const VALID_CLABE = '002000000000000008';
 const INVALID_CLABE_CONTROL_DIGIT = '002000000000000007';
-const INVALID_CLABE_BANK_CODE = '000000000000000000';  // Control digit es valido
+const INVALID_CLABE_BANK_CODE = '000000000000000000'; // Control digit es valido
 
 
 describe('computeControlDigit', function () {
