@@ -1,6 +1,6 @@
 {
   "name": "clabe-js",
-  "version": "1.3.0",
+  "version": "1.4.0-dev.0",
   "description": "Validate, generate and resolve bank names for Mexican CLABE numbers.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
