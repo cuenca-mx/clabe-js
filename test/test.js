@@ -5,7 +5,6 @@ const {
   validateClabe,
   computeControlDigit,
   getBankName,
-  getBankNameByBin,
   getBankNameOrThrow,
   generateNewClabes,
   addBank,
@@ -17,7 +16,7 @@ const { expect } = require('chai');
 const VALID_CLABE = '002000000000000008';
 const INVALID_CLABE_CONTROL_DIGIT = '002000000000000007';
 const INVALID_CLABE_BANK_CODE = '000000000000000000'; // Control digit es valido
-const VALID_CARD_BBVA = '4152314501669421'; // BIN 415231 -> 40012 -> BBVA Mexico
+const VALID_CARD_BBVA = '4152310000000000'; // BIN 415231 -> 40012 -> BBVA Mexico
 const VALID_CARD_BANAMEX = '5177120000000000'; // BIN 517712 -> 40002 -> Banamex
 
 
@@ -88,26 +87,6 @@ describe('getBankName con tarjetas', function () {
   });
 });
 
-describe('getBankNameByBin', function () {
-  it('resuelve BBVA Mexico para BIN 415231', function () {
-    expect(getBankNameByBin('415231')).to.equal('BBVA Mexico');
-  });
-  it('resuelve Banorte para BIN 418914', function () {
-    expect(getBankNameByBin('418914')).to.equal('Banorte');
-  });
-  it('retorna null si el BIN no está registrado', function () {
-    expect(getBankNameByBin('000000')).to.equal(null);
-  });
-  it('retorna null si el input es null', function () {
-    expect(getBankNameByBin(null)).to.equal(null);
-  });
-  it('retorna null si el input es muy corto', function () {
-    expect(getBankNameByBin('123')).to.equal(null);
-  });
-  it('funciona con número de tarjeta completo', function () {
-    expect(getBankNameByBin(VALID_CARD_BBVA)).to.equal('BBVA Mexico');
-  });
-});
 
 describe('getBankNameOrThrow', function () {
   it('returns bank name if code exists (CLABE)', function () {

@@ -4,7 +4,6 @@ export const CARD_BINS: Record<string, string>;
 export function validateClabe(clabe: string): boolean;
 export function computeControlDigit(clabe: string): string;
 export function getBankName(account: string | null | undefined): string | null;
-export function getBankNameByBin(cardNumber: string | null | undefined): string | null;
 export function getBankNameOrThrow(account: string): string;
 export function generateNewClabes(
   numberOfClabes: number,
