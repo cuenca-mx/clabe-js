@@ -16,6 +16,8 @@ const { expect } = require('chai');
 const VALID_CLABE = '002000000000000008';
 const INVALID_CLABE_CONTROL_DIGIT = '002000000000000007';
 const INVALID_CLABE_BANK_CODE = '000000000000000000'; // Control digit es valido
+const VALID_CARD_BBVA = '4152310000000000'; // BIN 415231 -> 40012 -> BBVA Mexico
+const VALID_CARD_BANAMEX = '5177120000000000'; // BIN 517712 -> 40002 -> Banamex
 
 
 describe('computeControlDigit', function () {
@@ -67,18 +69,46 @@ describe('getBankName', function () {
   });
 });
 
+describe('getBankName con tarjetas', function () {
+  it('resuelve BBVA Mexico para tarjeta con BIN 415231', function () {
+    expect(getBankName(VALID_CARD_BBVA)).to.equal('BBVA Mexico');
+  });
+  it('resuelve Banamex para tarjeta con BIN 517712', function () {
+    expect(getBankName(VALID_CARD_BANAMEX)).to.equal('Banamex');
+  });
+  it('retorna null para tarjeta con BIN desconocido', function () {
+    expect(getBankName('0000000000000000')).to.equal(null);
+  });
+  it('soporta tarjetas de 15 dígitos (Amex)', function () {
+    expect(getBankName('415231000000000')).to.equal('BBVA Mexico');
+  });
+  it('retorna null para longitudes no soportadas (10 dígitos)', function () {
+    expect(getBankName('4152310000')).to.equal(null);
+  });
+});
+
+
 describe('getBankNameOrThrow', function () {
-  it('returns bank name if code exists', function () {
+  it('returns bank name if code exists (CLABE)', function () {
     expect(getBankNameOrThrow(VALID_CLABE)).to.equal('Banamex');
+  });
+  it('returns bank name for card number', function () {
+    expect(getBankNameOrThrow(VALID_CARD_BBVA)).to.equal('BBVA Mexico');
   });
   it('throws when bank code is unknown', function () {
     expect(() => getBankNameOrThrow(INVALID_CLABE_BANK_CODE)).to.throw(Error);
   });
-  it('throws when CLABE is null', function () {
+  it('throws when card BIN is unknown', function () {
+    expect(() => getBankNameOrThrow('0000000000000000')).to.throw(Error);
+  });
+  it('throws when input is null', function () {
     expect(() => getBankNameOrThrow(null)).to.throw(Error);
   });
-  it('throws when CLABE is too short', function () {
+  it('throws when input is too short', function () {
     expect(() => getBankNameOrThrow('00')).to.throw(Error);
+  });
+  it('throws when length is not CLABE nor card', function () {
+    expect(() => getBankNameOrThrow('4152310000')).to.throw(Error);
   });
 });
 
